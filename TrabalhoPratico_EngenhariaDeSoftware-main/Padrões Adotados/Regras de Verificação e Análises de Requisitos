@@ -1,0 +1,24 @@
+# Regras de Verificação e Análise de Requisitos
+
+## 1. Nomenclatura dos Requisitos
+
+Para garantir organização e rastreabilidade, todos os requisitos do sistema serão identificados com as seguintes siglas:
+
+- **RF-XX – Requisitos Funcionais**: descrevem funcionalidades específicas do sistema.  
+  *Exemplo: RF-01, RF-02, RF-03, etc.*
+
+- **RNF-XX – Requisitos Não Funcionais**: estabelecem restrições e qualidades como desempenho, segurança e usabilidade.  
+  *Exemplo: RNF-01, RNF-02, RNF-03, etc.*
+
+Cada requisito será numerado de forma sequencial e conterá uma descrição objetiva.
+
+## 2. Regras de Especificação de Requisitos
+
+### Regra 1 – Clareza e Objetividade
+Os requisitos devem ser descritos em linguagem clara, simples e sem ambiguidades, de forma que qualquer pessoa envolvida no projeto consiga compreendê-los.
+
+### Regra 2 – Consistência
+Os requisitos não podem apresentar contradições entre si. A descrição de um requisito não deve invalidar ou entrar em conflito com a descrição de outro.
+
+### Regra 3 – Verificabilidade
+Cada requisito especificado deve ser testável, ou seja, deve ser possível verificar, por meio de testes, inspeções ou validações, se ele foi ou não atendido no sistema.
