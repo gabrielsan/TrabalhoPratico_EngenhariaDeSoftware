@@ -4,11 +4,11 @@
 
 Para garantir organização e rastreabilidade, todos os requisitos do sistema serão identificados com as seguintes siglas:
 
-- **RF-XX – Requisitos Funcionais**: descrevem funcionalidades específicas do sistema.  
-  *Exemplo: RF-01, RF-02, RF-03, etc.*
+- **RF XXX – Requisitos Funcionais**: descrevem funcionalidades específicas do sistema.  
+  *Exemplo: RF 001, RF 002, RF 003, etc.*
 
-- **RNF-XX – Requisitos Não Funcionais**: estabelecem restrições e qualidades como desempenho, segurança e usabilidade.  
-  *Exemplo: RNF-01, RNF-02, RNF-03, etc.*
+- **RNF XXX – Requisitos Não Funcionais**: estabelecem restrições e qualidades como desempenho, segurança e usabilidade.  
+  *Exemplo: RNF 001, RNF 002, RNF 003, etc.*
 
 Cada requisito será numerado de forma sequencial e conterá uma descrição objetiva.
 
