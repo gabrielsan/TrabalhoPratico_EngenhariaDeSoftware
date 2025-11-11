@@ -20,7 +20,7 @@ Este projeto é uma aplicação web voltada para o gerenciamento de finanças pe
 **Backend** 
 - **MySQL** v3.15.1 – Banco de dados relacional
 - **Nginx** v1.29.2 – Servidor web para produção
-
+- **Node.js** v22.15.0 – Plataforma de desenvolvimento
   
 **Frontend**
 - **Vite** v7.1.10 – Build tool e desenvolvimento frontend
