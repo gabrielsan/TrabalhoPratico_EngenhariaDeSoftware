@@ -17,9 +17,14 @@ Este projeto é uma aplicação web voltada para o gerenciamento de finanças pe
 
 ## 🛠 Tecnologias Utilizadas
 
-- **Node.js** v22.15.0 – Plataforma de desenvolvimento
-- **React** v19.2.0 – Biblioteca para construção de interfaces
-- **TypeScript** v5.8.3– Linguagem tipada para maior robustez no desenvolvimento
-- **Vite** v7.1.10 – Build tool e desenvolvimento frontend
+**Backend** 
 - **MySQL** v3.15.1 – Banco de dados relacional
 - **Nginx** v1.29.2 – Servidor web para produção
+
+  
+**Frontend**
+- **Vite** v7.1.10 – Build tool e desenvolvimento frontend
+- - **Node.js** v22.15.0 – Plataforma de desenvolvimento
+- **React** v19.2.0 – Biblioteca para construção de interfaces
+- **TypeScript** v5.8.3– Linguagem tipada para maior robustez no desenvolvimento
+
