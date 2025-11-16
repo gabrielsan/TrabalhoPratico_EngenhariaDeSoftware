@@ -6,9 +6,9 @@
 
 | Autor | GitHub |
 | :---: | :---: |
-| **Gabriel Santos Silva** | <a href="[https://github.com/autor-A]https://github.com/gabrielsan)"><img src="https://github.com/autor-A.png?size=80" width="80" alt="autor-A" title="autor-A"></a> |
-| **Marco Antonio Maia** | <a href="https://github.com/autor-B"><img src="https://github.com/autor-B.png?size=80" width="80" alt="autor-B" title="autor-B"></a> |
-| **Vitor Gabriel Firmino** | <a href="https://github.com/autor-c"><img src="https://github.com/autor-B.png?size=80" width="80" alt="autor-B" title="autor-B"></a> |
+| **Gabriel Santos Silva** | <a href="https://github.com/gabrielsan"><img src="https://github.com/gabrielsan.png?size=80" width="80" alt="gabrielsan" title="gabrielsan"></a> |
+| **Marco Antonio Maia** | <a href="https://github.com/marco2299"><img src="https://github.com/marco2299.png?size=80" width="80" alt="marco2299" title="marco2299"></a> |
+| **Vitor Gabriel Firmino** | <a href="https://github.com/vitorpdf"><img src="https://github.com/vitorpdf.png?size=80" width="80" alt="vitorpdf" title="vitorpdf"></a> |
 
 ## 1. Contexto do Problema e Solução
 
