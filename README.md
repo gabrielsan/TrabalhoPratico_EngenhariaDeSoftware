@@ -31,8 +31,8 @@ Este guia é voltado para usuários que desejam **apenas utilizar** o sistema. A
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/Luizagso/projeto_integrador](https://github.com/Luizagso/projeto_integrador)
-    cd projeto_integrador
+    git clone [https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git](https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git)
+    cd TrabalhoPratico_EngenhariaDeSoftware
     ```
 
 2.  **Execute os containers:**
@@ -61,8 +61,8 @@ Siga estas instruções para configurar o ambiente e desenvolver no projeto, uti
 
 * Execute o comando no seu terminal:
     ```bash
-    git clone [https://github.com/Luizagso/projeto_integrador](https://github.com/Luizagso/projeto_integrador)
-    cd projeto_integrador
+    git clone [https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git](https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git)
+    cd TrabalhoPratico_EngenhariaDeSoftware
     ```
 
 ### 3.2 - Configuração do Banco de Dados
@@ -85,7 +85,7 @@ Siga estas instruções para configurar o ambiente e desenvolver no projeto, uti
     ```
 3.  **Configure o `.env`:** Crie o arquivo `.env` nesta pasta e insira as variáveis de ambiente necessárias, ajustando-as para o seu ambiente local (garanta que `PORT_NODE` seja 3000 e `HOST_DATABASE` seja `localhost`):
     ```env
-    NAME_DATABASE=bd_projeto_integrador
+    NAME_DATABASE=bd_CastorFinanceiro
     USERNAME_DATABASE=root
     PASSWORD_DATABASE=root
     HOST_DATABASE=localhost
@@ -96,7 +96,7 @@ Siga estas instruções para configurar o ambiente e desenvolver no projeto, uti
     PORT_FRONTEND=80
     PORT_DATABASE=3306
     MYSQL_ROOT_PASSWORD=root
-    MYSQL_DATABASE=bd_projeto_integrador
+    MYSQL_DATABASE=bd_CastorFinanceiro
     ```
 4.  **Execute o backend:**
     ```bash
@@ -154,7 +154,7 @@ Este projeto está organizado nas pastas descritas abaixo, com separação clara
 * **`docker-compose.yml`**: Arquivo de configuração para orquestração de containers Docker.
 * **`README.md`**: Este arquivo de documentação.
 
-projeto_integrador/
+TrabalhoPratico_EngenhariaDeSoftware/
 ├── backend/
 │   ├── Dockerfile
 │   ├── index.js
