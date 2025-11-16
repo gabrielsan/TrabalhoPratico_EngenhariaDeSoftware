@@ -4,7 +4,7 @@
 
 ## 1. Contexto do Problema e Solução
 
-### Descrição do Problema
+### 😔 Descrição do Problema
 
 Muitas pessoas e famílias enfrentam dificuldades em manter o controle de suas finanças, resultando em **falta de visibilidade** sobre onde o dinheiro está sendo gasto, dificuldade em **economizar** e, frequentemente, o acúmulo de **dívidas** não planejadas. A ausência de um método simples e eficaz para registrar receitas, despesas e categorizar transações impede a tomada de decisões financeiras informadas.
 
@@ -13,7 +13,8 @@ Muitas pessoas e famílias enfrentam dificuldades em manter o controle de suas f
 O **Sistema de Controle Financeiro Pessoal** é uma aplicação web robusta, projetada para ser a principal ferramenta do usuário no gerenciamento de suas finanças individuais. A solução propicia:
 * O **registro, edição e exclusão** de todas as transações (receitas e despesas).
 * A **organização** dessas transações por categorias personalizadas.
-* A visualização de um **dashboard interativo** com indicadores financeiros chave, relatórios detalhados e alertas.
+* O **gerenciamento de limites** e a emissão de **alertas** para controle de gastos.
+* A visualização de um **dashboard interativo** com indicadores financeiros chave e relatórios detalhados.
 
 Com uma interface moderna e intuitiva, a plataforma oferece uma maneira simples e eficiente de alcançar o controle financeiro.
 
@@ -21,71 +22,103 @@ Com uma interface moderna e intuitiva, a plataforma oferece uma maneira simples 
 
 ## 2. Instruções para Uso (Usuário Final)
 
-Este guia é voltado para usuários que desejam **apenas utilizar** o sistema em sua máquina local.
+Este guia é voltado para usuários que desejam **apenas utilizar** o sistema. A forma mais simples de colocar a aplicação para rodar é utilizando o **Docker Compose**.
 
 ### ⚙️ Pré-requisitos
-Para rodar a aplicação, você precisará ter o **Node.js** instalado na sua máquina (versão v22.15.0 ou superior é recomendada).
+* [**Docker**](https://www.docker.com/) e [**Docker Compose**](https://docs.docker.com/compose/) instalados.
 
-### 🚀 Instalação e Execução
+### 🚀 Passos para Execução com Docker
 
-1.  **Baixar o Projeto:**
-    * **Opção 1 (Git):** Abra seu terminal e execute:
-        ```bash
-        git clone [Link do seu Repositório]
-        cd [Nome da Pasta do Repositório]
-        ```
-    * **Opção 2 (Download ZIP):** Baixe e descompacte o arquivo ZIP do repositório.
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/Luizagso/projeto_integrador](https://github.com/Luizagso/projeto_integrador)
+    cd projeto_integrador
+    ```
 
-2.  **Instalar Dependências:**
-    * No diretório raiz do projeto, execute:
-        ```bash
-        npm install
-        ```
+2.  **Execute os containers:**
+    * Este comando construirá a aplicação (Frontend e Backend), configurará o MySQL e o Nginx:
+    ```bash
+    docker-compose up -d --build
+    ```
 
-3.  **Configurar o Banco de Dados (MySQL):**
-    * Tenha uma instância do **MySQL** rodando localmente.
-    * Crie um novo banco de dados (ex: `finance_db`) e configure as credenciais no arquivo de configuração do backend.
-
-4.  **Iniciar a Aplicação:**
-    * Na pasta raiz do projeto, execute o comando de *build* e *start* (o comando pode variar):
-        ```bash
-        npm start
-        ```
-
-5.  **Acessar no Navegador:**
-    * Após a inicialização, abra seu navegador e acesse a URL (a porta pode variar):
-        ```
-        http://localhost:3000
-        ```
+3.  **Acesse a aplicação no navegador:**
+    * O servidor web (Nginx) estará disponível na porta 80.
+    ```
+    http://localhost
+    ```
 
 ---
 
 ## 3. Instruções para Desenvolvedores (DEVs)
 
-Siga as instruções abaixo para preparar seu ambiente de desenvolvimento:
+Siga estas instruções para configurar o ambiente e desenvolver no projeto, utilizando a execução local.
 
-### 3.1 - Clonar o Projeto
-* Execute no terminal:
+### ⚙️ Pré-requisitos para Desenvolvimento
+* [**Node.js**](https://nodejs.org/) (versão 14 ou superior).
+* [**MySQL 8.0**](https://dev.mysql.com/downloads/) instalado e configurado localmente.
+
+### 3.1 - Clone o Projeto
+
+* Execute o comando no seu terminal:
     ```bash
-    git clone [Link do seu Repositório]
+    git clone [https://github.com/Luizagso/projeto_integrador](https://github.com/Luizagso/projeto_integrador)
+    cd projeto_integrador
     ```
-    * _Alternativa: Baixar o zip e descompactar._
 
-### 3.2 - Instalar Dependências
-* Navegue até a pasta raiz e execute:
+### 3.2 - Configuração do Banco de Dados
+
+1.  Instale o MySQL 8.0.
+2.  Execute o script de inicialização para criar o banco e as tabelas (o script deve estar na pasta `./init-db/`):
+    ```bash
+    mysql -u root -p < ./init-db/01-initdb.sql
+    ```
+
+### 3.3 - Configuração e Execução do Backend
+
+1.  **Navegue** até a pasta do backend:
+    ```bash
+    cd backend
+    ```
+2.  **Instale as dependências:**
     ```bash
     npm install
     ```
+3.  **Configure o `.env`:** Crie o arquivo `.env` nesta pasta e insira as variáveis de ambiente necessárias, ajustando-as para o seu ambiente local (garanta que `PORT_NODE` seja 3000 e `HOST_DATABASE` seja `localhost`):
+    ```env
+    NAME_DATABASE=bd_projeto_integrador
+    USERNAME_DATABASE=root
+    PASSWORD_DATABASE=root
+    HOST_DATABASE=localhost
+    NODE_ENV=development
+    HOST_NODE=localhost
+    SECRET_KEY=CHAVECRIPTOGRAFIA
+    PORT_NODE=3000
+    PORT_FRONTEND=80
+    PORT_DATABASE=3306
+    MYSQL_ROOT_PASSWORD=root
+    MYSQL_DATABASE=bd_projeto_integrador
+    ```
+4.  **Execute o backend:**
+    ```bash
+    node index.js
+    ```
+    O backend estará disponível em: `http://localhost:3000`
 
-### 3.3 - Executar o Projeto em Modo de Desenvolvimento
-* Para iniciar o **backend** e o **frontend** simultaneamente em modo de *hot-reload* (desenvolvimento), execute na pasta raiz:
+### 3.4 - Configuração e Execução do Frontend
+
+1.  **Abra um novo terminal** e navegue para a pasta do frontend (voltando ao raiz do projeto primeiro, se necessário):
+    ```bash
+    cd ../frontend
+    ```
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+3.  **Execute o frontend** (em modo de desenvolvimento com hot-reload do Vite):
     ```bash
     npm run dev
     ```
-* Em seguida, acesse o *browser* na URL (porta comum para Vite):
-    ```
-    http://localhost:5173
-    ```
+    O frontend estará disponível em: `http://localhost:5173`
 
 ---
 
@@ -93,33 +126,48 @@ Siga as instruções abaixo para preparar seu ambiente de desenvolvimento:
 
 Este projeto foi construído utilizando as seguintes tecnologias:
 
-| Tipo | Tecnologia | Versão | Descrição |
-| :--- | :--- | :--- | :--- |
-| **Backend** | **Node.js** | v22.15.0 | Plataforma de desenvolvimento para o lado servidor. |
-| **Backend** | **Nginx** | v1.29.2 | Servidor web robusto (para produção). |
-| **Banco de Dados** | **MySQL** | v3.15.1 | Banco de dados relacional. |
-| **Frontend** | **React** | v19.2.0 | Biblioteca para a construção da interface do usuário. |
-| **Frontend** | **TypeScript** | v5.8.3 | Linguagem tipada para maior robustez. |
-| **Tooling** | **Vite** | v7.1.10 | Ferramenta de *build* e desenvolvimento frontend ultrarrápido. |
+| Categoria | Tecnologia | Descrição |
+| :--- | :--- | :--- |
+| **Plataforma** | **Node.js** | Plataforma de desenvolvimento para o lado servidor. |
+| **Frontend** | **React** | Biblioteca para a construção da interface do usuário. |
+| **Linguagem** | **TypeScript** | Linguagem tipada para maior robustez no desenvolvimento. |
+| **Build Tool** | **Vite** | Build tool e desenvolvimento frontend ultrarrápido. |
+| **Banco de Dados** | **MySQL** | Banco de dados relacional (versão 8.0). |
+| **Infraestrutura** | **Docker** | Containerização da aplicação para ambientes padronizados. |
+| **Servidor Web** | **Nginx** | Servidor web utilizado para produção. |
 
 ---
 
 ## 5. Organização do Projeto
 
-O projeto segue uma estrutura modular com separação entre *backend* e *frontend*.
+Este projeto está organizado nas pastas descritas abaixo, com separação clara entre a lógica do servidor (*backend*) e a interface do usuário (*frontend*).
 
 ### 📁 Estrutura de Pastas
 
-* **`backend/`**: Contém o código-fonte e a lógica do servidor (API, banco de dados).
-    * **`backend/src/controllers/`**: Lógica para lidar com requisições HTTP.
-    * **`backend/src/models/`**: Definição dos modelos de dados e interação com MySQL.
-    * **`backend/src/routes/`**: Definição das rotas da API.
-* **`frontend/`**: Contém todo o código do cliente (React, UI).
-    * **`frontend/src/components/`**: Componentes reutilizáveis da interface.
-    * **`frontend/src/pages/`**: Telas principais da aplicação.
-    * **`frontend/src/services/`**: Lógica para consumo da API.
-    * **`frontend/src/utils/`**: Funções auxiliares.
-    * **`frontend/public/`**: Arquivos estáticos.
-* **`config/`**: Arquivos de configuração globais.
-* **`docs/`**: Documentação do projeto.
-* **`tests/`**: Arquivos e scripts de testes automatizados.
+* **`backend/`**: Código-fonte da API Node.js.
+    * `backend/index.js`: Ponto de entrada da aplicação.
+    * _Estruturas internas para Controllers, Models e Routes devem estar aqui._
+* **`frontend/`**: Código-fonte do cliente React/Vite.
+    * `frontend/src/`: Código principal da interface.
+* **`init-db/`**: Contém scripts SQL para a inicialização e criação do banco de dados.
+    * `init-db/01-initdb.sql`: Script principal de criação do DB.
+* **`docker-compose.yml`**: Arquivo de configuração para orquestração de containers Docker.
+* **`README.md`**: Este arquivo de documentação.
+
+projeto_integrador/
+├── backend/
+│   ├── Dockerfile
+│   ├── index.js
+│   ├── package.json
+│   └── package-lock.json
+├── frontend/
+│   ├── src/
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── ...
+├── init-db/
+│   └── 01-initdb.sql
+├── docker-compose.yml
+├── .dockerignore
+└── README.md
