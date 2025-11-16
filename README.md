@@ -154,6 +154,8 @@ Este projeto está organizado nas pastas descritas abaixo, com separação clara
 * **`docker-compose.yml`**: Arquivo de configuração para orquestração de containers Docker.
 * **`README.md`**: Este arquivo de documentação.
 
+
+```
 TrabalhoPratico_EngenhariaDeSoftware/
 ├── backend/
 │   ├── Dockerfile
@@ -171,3 +173,4 @@ TrabalhoPratico_EngenhariaDeSoftware/
 ├── docker-compose.yml
 ├── .dockerignore
 └── README.md
+```
