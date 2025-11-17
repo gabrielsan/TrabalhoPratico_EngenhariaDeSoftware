@@ -67,26 +67,32 @@ Para executar a aplicação em sua máquina local, o **Backend**, o **Frontend**
       `
    npm install
    `
-3. **Configure o `.env`:** Crie o arquivo `.env` nesta pasta e insira as variáveis de ambiente necessárias, ajustando-as para o seu ambiente local. É crucial que `HOST_DATABASE` seja **`localhost`**:
+3. **Configure o `.env`:** Crie o arquivo `.env` na pasta backend e insira as variáveis de ambiente necessárias, ajustando-as para o seu ambiente local. É crucial que `HOST_DATABASE` seja **`localhost`**:
       `
-   NAME_DATABASE=bd_CastorFinanceiro
-   USERNAME_DATABASE=root
-   PASSWORD_DATABASE=root
-   HOST_DATABASE=localhost
-   NODE_ENV=development
-  	HOST_NODE=localhost
-  	SECRET_KEY=CHAVECRIPTOGRAFIA
-  	PORT_NODE=3000
-  	PORT_FRONTEND=80
-  	PORT_DATABASE=3306
-  	MYSQL_ROOT_PASSWORD=root
-  	MYSQL_DATABASE=bd_CastorFinanceiro
+
+# Configuração do Banco de Dados
+
+NAME_DATABASE=bd_castor_financeiro
+USERNAME_DATABASE=root
+PASSWORD_DATABASE=root
+HOST_DATABASE=localhost
+
+# Configuração do Ambiente
+
+NODE_ENV=development
+HOST_NODE=localhost
+SECRET_KEY=CHAVECRIPTOGRAFIA
+
+# Configuração de Portas
+
+PORT_NODE=3000
+PORT_FRONTEND=80
+PORT_DATABASE=3306
    `
-4. **Execute o backend:**
+4. **Ainda na pasta backend, execute este comando para iniciar:**
       `
    node index.js
-   `
-      O backend estará disponível em: `http://localhost:3000`
+   `      O backend estará disponível em:`http://localhost:3000`
 
 ### 2.4 - Configuração e Execução do Frontend
 
@@ -140,15 +146,35 @@ Este projeto está organizado nas pastas descritas abaixo, com separação clara
 ````
  TrabalhoPratico_EngenhariaDeSoftware/
 ├── backend/
-│   ├── index.js
-│   ├── package.json
-│   └── package-lock.json
+    ├── controller/auth
+    ├── database/
+    ├── environment/
+    ├── middleware/
+    ├── model/
+    ├──.env
+    ├──.gitignore
+    ├── index.js
+    ├── package.json
+    └── package-lock.json
 ├── frontend/
-│   ├── src/
-│   ├── package.json
-│   └── vite.config.ts
+│   ├── public/
+    ├── src/
+    ├──── components/
+    ├──── context/
+    ├──── pages/
+    ├──── routes/
+    ├──── services/
+    ├──── utils/
+    ├─── App.css
+    ├─── App.tsx
+    ├─── index.css
+    ├─── main.tsx
+    ├───.gitignore
+    ├─── index.html
 ├── init-db/
 │   └── 01-initdb.sql
+├── .gitigonore
+├── .packege-lock.json
 └── README.md
  ```
 ````
