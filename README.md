@@ -6,9 +6,11 @@
 
 | Autor | GitHub |
 | :---: | :---: |
-| **Gabriel Santos Silva** | <a href="https://github.com/gabrielsan"><img src="https://github.com/gabrielsan.png?size=30" width="30" alt="gabrielsan" title="gabrielsan"></a> |
-| **Marco Antonio Maia** | <a href="https://github.com/marco2299"><img src="https://github.com/marco2299.png?size=30" width="30" alt="marco2299" title="marco2299"></a> |
-| **Vitor Gabriel Firmino** | <a href="https://github.com/vitorpdf"><img src="https://github.com/vitorpdf.png?size=30" width="30" alt="vitorpdf" title="vitorpdf"></a> |
+| **Gabriel Santos Silva** | <a href="https://github.com/gabrielsan"><img src="https://github.com/gabrielsan.png?size=50" width="50" alt="gabrielsan" title="gabrielsan"></a> |
+| **Marco Antonio Maia** | <a href="https://github.com/marco2299"><img src="https://github.com/marco2299.png?size=50" width="50" alt="marco2299" title="marco2299"></a> |
+| **Vitor Gabriel Firmino** | <a href="https://github.com/vitorpdf"><img src="https://github.com/vitorpdf.png?size=50" width="50" alt="vitorpdf" title="vitorpdf"></a> |
+
+---
 
 ## 1. Contexto do Problema e Solução
 
@@ -28,109 +30,83 @@ Com uma interface moderna e intuitiva, a plataforma oferece uma maneira simples 
 
 ---
 
-## 2. Instruções para Uso (Usuário Final)
+## 2. Instruções para Execução Local (Usuário e Desenvolvedor) 🚀
 
-Este guia é voltado para usuários que desejam **apenas utilizar** o sistema. A forma mais simples de colocar a aplicação para rodar é utilizando o **Docker Compose**.
+Para executar a aplicação em sua máquina local, o **Backend**, o **Frontend** e o **Banco de Dados** devem ser iniciados separadamente.
 
 ### ⚙️ Pré-requisitos
-* [**Docker**](https://www.docker.com/) e [**Docker Compose**](https://docs.docker.com/compose/) instalados.
-
-### 🚀 Passos para Execução com Docker
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git](https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git)
-    cd TrabalhoPratico_EngenhariaDeSoftware
-    ```
-
-2.  **Execute os containers:**
-    * Este comando construirá a aplicação (Frontend e Backend), configurará o MySQL e o Nginx:
-    ```bash
-    docker-compose up -d --build
-    ```
-
-3.  **Acesse a aplicação no navegador:**
-    * O servidor web (Nginx) estará disponível na porta 80.
-    ```
-    http://localhost
-    ```
-
----
-
-## 3. Instruções para Desenvolvedores (DEVs)
-
-Siga estas instruções para configurar o ambiente e desenvolver no projeto, utilizando a execução local.
-
-### ⚙️ Pré-requisitos para Desenvolvimento
 * [**Node.js**](https://nodejs.org/) (versão 14 ou superior).
 * [**MySQL 8.0**](https://dev.mysql.com/downloads/) instalado e configurado localmente.
 
-### 3.1 - Clone o Projeto
+### 2.1 - Clone o Projeto
 
-* Execute o comando no seu terminal:
-    ```bash
-    git clone [https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git](https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git)
-    cd TrabalhoPratico_EngenhariaDeSoftware
-    ```
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git](https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git)
+   cd TrabalhoPratico_EngenhariaDeSoftware
+   ```
 
-### 3.2 - Configuração do Banco de Dados
+### 2.2 - Configuração do Banco de Dados
 
-1.  Instale o MySQL 8.0.
-2.  Execute o script de inicialização para criar o banco e as tabelas (o script deve estar na pasta `./init-db/`):
-    ```bash
-    mysql -u root -p < ./init-db/01-initdb.sql
-    ```
+1. **Instale o MySQL 8.0** em sua máquina.
+2. **Execute o script de inicialização** para criar o banco de dados e as tabelas (o script deve estar na pasta `./init-db/`):
+   ```bash
+   # Certifique-se de que o MySQL está rodando e ajuste o usuário/senha (root) se necessário.
+   mysql -u root -p < ./init-db/01-initdb.sql
+   ```
 
-### 3.3 - Configuração e Execução do Backend
+### 2.3 - Configuração e Execução do Backend (API)
 
-1.  **Navegue** até a pasta do backend:
-    ```bash
-    cd backend
-    ```
-2.  **Instale as dependências:**
-    ```bash
-    npm install
-    ```
-3.  **Configure o `.env`:** Crie o arquivo `.env` nesta pasta e insira as variáveis de ambiente necessárias, ajustando-as para o seu ambiente local (garanta que `PORT_NODE` seja 3000 e `HOST_DATABASE` seja `localhost`):
-    ```env
-    NAME_DATABASE=bd_CastorFinanceiro
-    USERNAME_DATABASE=root
-    PASSWORD_DATABASE=root
-    HOST_DATABASE=localhost
-    NODE_ENV=development
-    HOST_NODE=localhost
-    SECRET_KEY=CHAVECRIPTOGRAFIA
-    PORT_NODE=3000
-    PORT_FRONTEND=80
-    PORT_DATABASE=3306
-    MYSQL_ROOT_PASSWORD=root
-    MYSQL_DATABASE=bd_CastorFinanceiro
-    ```
-4.  **Execute o backend:**
-    ```bash
-    node index.js
-    ```
-    O backend estará disponível em: `http://localhost:3000`
+1. **Navegue** até a pasta do backend:
+   ```bash
+   cd backend
+   ```
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+3. **Configure o `.env`:** Crie o arquivo `.env` nesta pasta e insira as variáveis de ambiente necessárias, ajustando-as para o seu ambiente local. É crucial que `HOST_DATABASE` seja **`localhost`**:
+   ```env
+   NAME_DATABASE=bd_CastorFinanceiro
+   USERNAME_DATABASE=root
+   PASSWORD_DATABASE=root
+   HOST_DATABASE=localhost
+   NODE_ENV=development
+  	HOST_NODE=localhost
+  	SECRET_KEY=CHAVECRIPTOGRAFIA
+  	PORT_NODE=3000
+  	PORT_FRONTEND=80
+  	PORT_DATABASE=3306
+  	MYSQL_ROOT_PASSWORD=root
+  	MYSQL_DATABASE=bd_CastorFinanceiro
+   ```
+4. **Execute o backend:**
+   ```bash
+   node index.js
+   ```
+   O backend estará disponível em: `http://localhost:3000`
 
-### 3.4 - Configuração e Execução do Frontend
+### 2.4 - Configuração e Execução do Frontend
 
-1.  **Abra um novo terminal** e navegue para a pasta do frontend (voltando ao raiz do projeto primeiro, se necessário):
-    ```bash
-    cd ../frontend
-    ```
-2.  **Instale as dependências:**
-    ```bash
-    npm install
-    ```
-3.  **Execute o frontend** (em modo de desenvolvimento com hot-reload do Vite):
-    ```bash
-    npm run dev
-    ```
-    O frontend estará disponível em: `http://localhost:5173`
+1. **Abra um novo terminal** e navegue para a pasta do frontend (voltando ao raiz do projeto primeiro, se necessário):
+   ```bash
+   cd ../frontend
+   ```
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+3. **Execute o frontend** (em modo de desenvolvimento com hot-reload do Vite):
+   ```bash
+   npm run dev
+   ```
+   O frontend estará disponível em: `http://localhost:5173`
+
+> **Nota:** Para utilizar o sistema, certifique-se de que tanto o **Backend** (`http://localhost:3000`) quanto o **Frontend** (`http://localhost:5173`) estão rodando simultaneamente em terminais separados.
 
 ---
 
-## 4. Tecnologias
+## 3. Tecnologias 💻
 
 Este projeto foi construído utilizando as seguintes tecnologias:
 
@@ -141,44 +117,34 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 | **Linguagem** | **TypeScript** | Linguagem tipada para maior robustez no desenvolvimento. |
 | **Build Tool** | **Vite** | Build tool e desenvolvimento frontend ultrarrápido. |
 | **Banco de Dados** | **MySQL** | Banco de dados relacional (versão 8.0). |
-| **Infraestrutura** | **Docker** | Containerização da aplicação para ambientes padronizados. |
-| **Servidor Web** | **Nginx** | Servidor web utilizado para produção. |
 
 ---
 
-## 5. Organização do Projeto
+## 4. Organização do Projeto
 
 Este projeto está organizado nas pastas descritas abaixo, com separação clara entre a lógica do servidor (*backend*) e a interface do usuário (*frontend*).
 
 ### 📁 Estrutura de Pastas
 
 * **`backend/`**: Código-fonte da API Node.js.
-    * `backend/index.js`: Ponto de entrada da aplicação.
-    * _Estruturas internas para Controllers, Models e Routes devem estar aqui._
+    * `backend/index.js`: Ponto de entrada da aplicação.
+    * _Estruturas internas para Controllers, Models e Routes devem estar aqui._
 * **`frontend/`**: Código-fonte do cliente React/Vite.
-    * `frontend/src/`: Código principal da interface.
+    * `frontend/src/`: Código principal da interface.
 * **`init-db/`**: Contém scripts SQL para a inicialização e criação do banco de dados.
-    * `init-db/01-initdb.sql`: Script principal de criação do DB.
-* **`docker-compose.yml`**: Arquivo de configuração para orquestração de containers Docker.
+    * `init-db/01-initdb.sql`: Script principal de criação do DB.
 * **`README.md`**: Este arquivo de documentação.
-
-
-```
-TrabalhoPratico_EngenhariaDeSoftware/
+ ```
+  TrabalhoPratico_EngenhariaDeSoftware/
 ├── backend/
-│   ├── Dockerfile
-│   ├── index.js
-│   ├── package.json
-│   └── package-lock.json
+│   ├── index.js
+│   ├── package.json
+│   └── package-lock.json
 ├── frontend/
-│   ├── src/
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── vite.config.ts
-│   └── ...
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.ts
 ├── init-db/
-│   └── 01-initdb.sql
-├── docker-compose.yml
-├── .dockerignore
+│   └── 01-initdb.sql
 └── README.md
-```
+ ```
