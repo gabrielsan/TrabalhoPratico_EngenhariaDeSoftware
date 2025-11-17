@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.header {
+  background-color: #006414;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-lp {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 60%;
+}
+
+.hero {
+  background-color: #006414;
+  padding-bottom: 50px;
+}
+
+.impact-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  font-style: italic;
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  padding-bottom: 3%;
+}
+
+.buttons .btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.benefits {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.benefit-card {
+  width: 30%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card b {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.benefit-card p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.5;
+}
+
+.card-image {
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,57 @@
+/* NavigationBar.css */
+
+.custom-navbar {
+  background-color: #006414 !important; /* Cor branca */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+  padding: 0.5rem 1rem; /* Adiciona padding para espaçamento */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+.navbar-logo {
+  width: 18%; /* Ajuste o tamanho conforme necessário */
+}
+
+.navbar-brand span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  color: #000;
+}
+
+.navbar-nav .nav-link {
+  color: #000000 !important; /* Cor preta para os links */
+  font-weight: bold;
+  margin: 0 15px; /* Espaçamento entre os links */
+  position: relative;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important; /* Cor amarela no hover */
+}
+
+.navbar-collapse {
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}

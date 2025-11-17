@@ -1,0 +1,14 @@
+/* src/components/Public/Login.css */
+
+.login-container {
+  min-height: 120vh;
+  background-color: #006414;
+}
+
+
+.footer {
+  background-color: #e0e0e0;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}

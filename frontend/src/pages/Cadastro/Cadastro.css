@@ -1,0 +1,28 @@
+.impact-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  font-style: italic;
+  color: #dcd9d9;
+  font-weight: 800;
+  padding-bottom: 3%;
+}
+
+.text-tam {
+    margin: auto;
+    width: 80%;
+    color: #dcd9d9;
+}
+
+.altura {
+  height: 945px;
+  width: 100%;
+  margin: 0;
+}
+
+.card {
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding-left: 30px;
+  padding-right: 30px;
+}

@@ -1,42 +1,120 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 70px;
+}
+
+.navbar + .main-content {
+  padding-top: 56px; /* Ajuste conforme a altura da sua navbar */
+  padding-bottom: 40px; /* Ajuste conforme a altura do footer */
+}
+
+.App {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App-link {
+  color: #61dafb;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  background-color: #e0e0e0;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Estilos específicos para páginas de login e registro */
+.auth-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-footer {
+  margin-top: auto;
 }
 
 .card {
-  padding: 2em;
+  margin-bottom: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.bg-purple {
+  background-color: #dcd9d9 !important;
+}
+
+.bg-green {
+  background-color: #006414 !important;
+  border: #006414;
+}
+
+.bg-gray {
+  background-color: #e0e0e0 !important; 
+}
+
+.merriweather-regular {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Estilos de hover para botões com classe 'bg-green' */
+.bg-green {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bg-green:hover {
+  background-color: #004d0f !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bg-green:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de hover para botões padrão do Bootstrap com classe 'bg-green' */
+.btn.bg-green {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.bg-green:hover {
+  background-color: #004d0f !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn.bg-green:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
