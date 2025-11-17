@@ -134,7 +134,9 @@ Este projeto está organizado nas pastas descritas abaixo, com separação clara
 * **`init-db/`**: Contém scripts SQL para a inicialização e criação do banco de dados.
     * `init-db/01-initdb.sql`: Script principal de criação do DB.
 * **`README.md`**: Este arquivo de documentação.
- ```
+
+ 
+ ```
   TrabalhoPratico_EngenhariaDeSoftware/
 ├── backend/
 │   ├── index.js
