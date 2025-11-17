@@ -41,8 +41,8 @@ Para executar a aplicação em sua máquina local, o **Backend**, o **Frontend**
 ### 2.1 - Clone o Projeto
 
 1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git](https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git)
+   ```
+   git clone [https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git](https://github.com/gabrielsan/TrabalhoPratico_EngenhariaDeSoftware.git)
    cd TrabalhoPratico_EngenhariaDeSoftware
    ```
 
@@ -50,7 +50,7 @@ Para executar a aplicação em sua máquina local, o **Backend**, o **Frontend**
 
 1. **Instale o MySQL 8.0** em sua máquina.
 2. **Execute o script de inicialização** para criar o banco de dados e as tabelas (o script deve estar na pasta `./init-db/`):
-   ```bash
+   ```
    # Certifique-se de que o MySQL está rodando e ajuste o usuário/senha (root) se necessário.
    mysql -u root -p < ./init-db/01-initdb.sql
    ```
@@ -58,15 +58,15 @@ Para executar a aplicação em sua máquina local, o **Backend**, o **Frontend**
 ### 2.3 - Configuração e Execução do Backend (API)
 
 1. **Navegue** até a pasta do backend:
-   ```bash
+   ```
    cd backend
    ```
 2. **Instale as dependências:**
-   ```bash
+   ```
    npm install
    ```
 3. **Configure o `.env`:** Crie o arquivo `.env` nesta pasta e insira as variáveis de ambiente necessárias, ajustando-as para o seu ambiente local. É crucial que `HOST_DATABASE` seja **`localhost`**:
-   ```env
+   ```
    NAME_DATABASE=bd_CastorFinanceiro
    USERNAME_DATABASE=root
    PASSWORD_DATABASE=root
@@ -81,7 +81,7 @@ Para executar a aplicação em sua máquina local, o **Backend**, o **Frontend**
   	MYSQL_DATABASE=bd_CastorFinanceiro
    ```
 4. **Execute o backend:**
-   ```bash
+   ```
    node index.js
    ```
    O backend estará disponível em: `http://localhost:3000`
@@ -89,15 +89,15 @@ Para executar a aplicação em sua máquina local, o **Backend**, o **Frontend**
 ### 2.4 - Configuração e Execução do Frontend
 
 1. **Abra um novo terminal** e navegue para a pasta do frontend (voltando ao raiz do projeto primeiro, se necessário):
-   ```bash
+   ```
    cd ../frontend
    ```
 2. **Instale as dependências:**
-   ```bash
+   ```
    npm install
    ```
 3. **Execute o frontend** (em modo de desenvolvimento com hot-reload do Vite):
-   ```bash
+   ```
    npm run dev
    ```
    O frontend estará disponível em: `http://localhost:5173`
