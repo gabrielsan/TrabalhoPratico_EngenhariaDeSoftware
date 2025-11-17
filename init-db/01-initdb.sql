@@ -6,7 +6,6 @@ CREATE TABLE IF NOT EXISTS usuario (
   nome varchar(100) NOT NULL,
   email varchar(60) NOT NULL,
   senha varchar(60) NOT NULL,
-  limite float NULL,
   createdAt datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updatedAt datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
