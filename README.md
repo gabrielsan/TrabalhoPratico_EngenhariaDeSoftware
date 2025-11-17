@@ -2,7 +2,7 @@
 
 ---
 
-## 👥 Autores / Desenvolvedores
+## Autores / Desenvolvedores
 
 | Autor | GitHub |
 | :---: | :---: |
@@ -12,11 +12,11 @@
 
 ## 1. Contexto do Problema e Solução
 
-### 😔 Descrição do Problema
+### Descrição do Problema
 
 Muitas pessoas e famílias enfrentam dificuldades em manter o controle de suas finanças, resultando em **falta de visibilidade** sobre onde o dinheiro está sendo gasto, dificuldade em **economizar** e, frequentemente, o acúmulo de **dívidas** não planejadas. A ausência de um método simples e eficaz para registrar receitas, despesas e categorizar transações impede a tomada de decisões financeiras informadas.
 
-### ✨ Descrição da Solução
+### 💡 Descrição da Solução
 
 O **Sistema de Controle Financeiro Pessoal** é uma aplicação web robusta, projetada para ser a principal ferramenta do usuário no gerenciamento de suas finanças individuais. A solução propicia:
 * O **registro, edição e exclusão** de todas as transações (receitas e despesas).
