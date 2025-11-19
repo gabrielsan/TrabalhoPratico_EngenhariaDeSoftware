@@ -9,6 +9,7 @@ import Cadastro from "../pages/Cadastro/Cadastro";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import LandingPage from "../pages/LandingPage/LandingPage";
 import Usuario from "../pages/Usuario/Usuario";
+import CategoriaCRUD from "../pages/Categoria/Categoria";
 
 import { useAuth } from "../context/AuthContext";
 
@@ -32,6 +33,10 @@ export default function AppRouter() {
           <Route
             path="/usuario"
             element={isAuthenticated ? <Usuario /> : <Login />}
+          />
+          <Route
+            path="/categorias"
+            element={isAuthenticated ? <CategoriaCRUD /> : <Login />}
           />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
