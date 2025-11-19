@@ -16,11 +16,6 @@ const categoriaController = require("./controller/categoriaController");
 
 const { verificarToken } = require("./middleware/authMiddleware");
 
-// Rotas privadas
-app.use("/categorias", categoriaController);
-
-const Categoria = require("./model/categoria/modelCategoria");
-
 //Categoria.associate({ CategoriaTransacao });
 
 const app = express();
@@ -32,6 +27,11 @@ app.use("/usuarios", usuarioController);
 
 // Middleware para verificar token JWT em todas as rotas
 app.use(verificarToken);
+
+// Rotas privadas
+app.use("/categorias", categoriaController);
+
+const Categoria = require("./model/categoria/modelCategoria");
 
 // Sincronização do modelo com o banco de dados e inicialização do servidor
 sequelize
