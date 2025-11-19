@@ -12,8 +12,16 @@ global.UTILS = require("./environment/utils");
 const sequelize = require("./database/database");
 const authController = require("./controller/auth/authController");
 const usuarioController = require("./controller/usuarioController");
+const categoriaController = require("./controller/categoriaController");
 
 const { verificarToken } = require("./middleware/authMiddleware");
+
+// Rotas privadas
+app.use("/categorias", categoriaController);
+
+const Categoria = require("./model/categoria/modelCategoria");
+
+//Categoria.associate({ CategoriaTransacao });
 
 const app = express();
 app.use(cors());
