@@ -1,9 +1,16 @@
 {
+  "scripts": {
+    "start": "node index.js",
+    "test": "poku Testes",
+    "coverage": "c8 --reporter=text --reporter=html poku Testes"
+  },
   "devDependencies": {
+    "c8": "^8.0.1",
     "poku": "^3.0.2",
     "tsx": "^4.20.6"
   },
   "dependencies": {
+    "express": "^5.1.0",
     "supertest": "^7.1.4"
   }
 }

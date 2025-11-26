@@ -1,9 +1,8 @@
 const { test, assert, beforeEach } = require("poku");
 const request = require("supertest");
-const express = require("express");
+const express = require("../backend/node_modules/express");
 const path = require("path");
 
-// ===== MOCK GLOBAL.UTILS =====
 global.UTILS = {
   handleSequelizeError: (err, res) => {
     res.status(500).json({ error: "mock-error" });
@@ -35,9 +34,13 @@ beforeEach(() => {
   };
 
   // ===== RESOLVER CAMINHOS =====
-  const modelPath = require.resolve("../model/categoria/modelCategoria");
-  const dbPath = require.resolve("../database/database");
-  const controllerPath = require.resolve("../controller/categoriaController");
+  const modelPath = require.resolve(
+    "../backend/model/categoria/modelCategoria"
+  );
+  const dbPath = require.resolve("../backend/database/database");
+  const controllerPath = require.resolve(
+    "../backend/controller/categoriaController"
+  );
 
   // ===== COLOCAR MOCKS NO CACHE =====
   require.cache[modelPath] = { exports: MockCategoria };
@@ -47,7 +50,7 @@ beforeEach(() => {
   delete require.cache[controllerPath];
 
   // ===== IMPORTAR CONTROLLER NOVAMENTE =====
-  categoriaRouter = require("../controller/categoriaController");
+  categoriaRouter = require("../backend/controller/categoriaController");
 
   // ===== EXPRESS =====
   app = express();
@@ -61,7 +64,7 @@ beforeEach(() => {
   app.use("/categorias", categoriaRouter);
 });
 
-// ================= GET =================
+// ================= GET Categorias =================
 test("Lista categorias", async () => {
   MockCategoria.findAll = async () => [{ id: 1, nome: "Teste" }];
 
@@ -71,7 +74,7 @@ test("Lista categorias", async () => {
   assert.equal(res.body[0].nome, "Teste");
 });
 
-// ================= POST =================
+// ================= POST Categorias =================
 test("Cria categoria", async () => {
   MockCategoria.create = async (data) => ({
     id: 10,
@@ -86,7 +89,7 @@ test("Cria categoria", async () => {
   assert.equal(res.body.nome, "Nova categoria");
 });
 
-// ================= PUT =================
+// ================= PUT Categoria =================
 test("Atualiza categoria", async () => {
   MockCategoria.update = async () => 1;
 
@@ -98,7 +101,7 @@ test("Atualiza categoria", async () => {
   assert.equal(res.body.nome, "Editada");
 });
 
-// ================= DELETE =================
+// ================= DELETE Categoria =================
 test("Deleta categoria", async () => {
   MockCategoria.destroy = async () => 1;
 

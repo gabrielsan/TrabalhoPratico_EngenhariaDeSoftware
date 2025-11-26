@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "poku",
-    "coverage": "c8 --reporter=text --reporter=html npm test"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
