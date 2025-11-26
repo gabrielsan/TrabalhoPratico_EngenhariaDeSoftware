@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "poku": "^3.0.2",
+    "tsx": "^4.20.6"
+  },
+  "dependencies": {
+    "supertest": "^7.1.4"
+  }
+}
