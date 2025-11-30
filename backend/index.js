@@ -13,10 +13,10 @@ const sequelize = require("./database/database");
 const authController = require("./controller/auth/authController");
 const usuarioController = require("./controller/usuarioController");
 const categoriaController = require("./controller/categoriaController");
+const TransacaoController = require("./controller/transacaoController");
+const relatorioController = require("./controller/relatorioController");
 
 const { verificarToken } = require("./middleware/authMiddleware");
-
-//Categoria.associate({ CategoriaTransacao });
 
 const app = express();
 app.use(cors());
@@ -30,8 +30,16 @@ app.use(verificarToken);
 
 // Rotas privadas
 app.use("/categorias", categoriaController);
+app.use("/transacoes", TransacaoController);
+app.use("/relatorio", relatorioController);
 
+const Transacao = require("./model/transacao/modelTransacao");
 const Categoria = require("./model/categoria/modelCategoria");
+const CategoriaTransacao = require("./model/categoriaTransacao/modelCategoriaTransacao");
+
+Transacao.associate({ CategoriaTransacao });
+Categoria.associate({ CategoriaTransacao });
+CategoriaTransacao.associate({ Transacao, Categoria });
 
 // Sincronização do modelo com o banco de dados e inicialização do servidor
 sequelize

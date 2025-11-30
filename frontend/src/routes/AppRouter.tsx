@@ -8,9 +8,10 @@ import Login from "../pages/Login/Login";
 import Cadastro from "../pages/Cadastro/Cadastro";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import LandingPage from "../pages/LandingPage/LandingPage";
-import Usuario from "../pages/Usuario/Usuario";
 import CategoriaCRUD from "../pages/Categoria/Categoria";
-
+import TransacaoCRUD from "../pages/Transacao/Transacao";
+import Usuario from "../pages/Usuario/Usuario";
+import Relatorios from "../pages/Relatorios/Relatorios";
 import { useAuth } from "../context/AuthContext";
 
 export default function AppRouter() {
@@ -31,12 +32,20 @@ export default function AppRouter() {
             element={isAuthenticated ? <Dashboard /> : <Login />}
           />
           <Route
+            path="/categorias"
+            element={isAuthenticated ? <CategoriaCRUD /> : <Login />}
+          />
+          <Route
+            path="/transacoes"
+            element={isAuthenticated ? <TransacaoCRUD /> : <Login />}
+          />
+          <Route
             path="/usuario"
             element={isAuthenticated ? <Usuario /> : <Login />}
           />
           <Route
-            path="/categorias"
-            element={isAuthenticated ? <CategoriaCRUD /> : <Login />}
+            path="/relatorios"
+            element={isAuthenticated ? <Relatorios /> : <Login />}
           />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
