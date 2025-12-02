@@ -27,8 +27,8 @@ public class CT002LoginInvlidoTest {
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
-  public void setUp() {
-    driver = new FirefoxDriver();
+  public void setUp() throws MalformedURLException {
+    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
